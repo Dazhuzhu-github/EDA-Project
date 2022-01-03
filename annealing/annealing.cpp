@@ -4,17 +4,6 @@
 #include <vector>
 using namespace std;
 
-// inline int readNum() // 快速读入
-// {
-//     char ch = getchar();
-//     while (ch < '0' || ch > '9') ch = getchar();
-//     int v = 0;
-//     while (ch >= '0' && ch <= '9') {
-//         v = v * 10 + ch - '0';
-//         ch = getchar();
-//     }
-//     return v;
-// };
 int main()
 {
     freopen("data.txt", "r", stdin);
