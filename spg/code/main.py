@@ -12,14 +12,21 @@ f.close()             #关闭文件
 
 N = int(data[0][0]) #number of transistor
 M = int(data[1][0]) #number of net
-net = []
-for i in range(2,2+N) :
+pmos_net = []
+for i in range(2,2+int(N/2)) :
     c = []
     c.append(int(data[i][0]))
     c.append(int(data[i][2]))
     c.append(data[i][4])
-    net.append(c)
+    pmos_net.append(c)
 
-outcome, expression = spg.Spg(N,M,net)
+nmos_net = []
+for i in range(2+int(N/2),2+N) :
+    c = []
+    c.append(int(data[i][0]))
+    c.append(int(data[i][2]))
+    c.append(data[i][4])
+    nmos_net.append(c)
+outcome, expression = spg.Spg(N,M,pmos_net,nmos_net)
 print(outcome)
 print(expression)
